@@ -16,12 +16,15 @@ jobs:
       - run: npm install
       - run: npm build
 
+      - name: List output files
+        run: ls
+
       - name: 📂 Upload dist to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./public/
-          server-dir: domains/wildernisonderwater.be/public_html/beta/
+          local-dir: public/
+          server-dir: domains/wildernisonderwater.be/public_html/
           #server-dir: domains/wildernisonderwater.be/public_html/
