@@ -48,6 +48,7 @@ collections:
     create: true
     fields:
       - { label: Template, name: template, widget: hidden, default: BlogPost }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - name: path
         label: Path
         widget: string
